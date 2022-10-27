@@ -1,19 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>Sklep</title>
 </head>
 <body>
-    <h1>WITAJ W NASZYM SKLEPIE</h1>
 
-    <h3>FAJNIE ŻE WPADŁEŚ</h3>
+    <div>
+      <h1>LOGO SKLEPU wyszukiwarka wyloguj</h1>
+    </div>
+    <div style="clear:both"></div>
+    <div style="width:200px; float:left">
+        <h3>MENU</h3>
+        {% for kat in kategorie  %}
+            <p><a href="/kategoria/{{ kat.id }}"> {{ kat.nazwa}} </a></p>
+        {% endfor %}
+    </div>
+    <div style="width:700; float:left">
+        {% block produkt %}    {% endblock produkt %}
+    </div>
 
-    {% for kat in kategorie  %}
-
-    <p><a href="kategoria/{{ kat.id }}"> {{ kat.nazwa}} </a></p>
-
-    {% endfor %}
 
 </body>
 </html>
