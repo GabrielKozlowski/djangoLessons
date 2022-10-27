@@ -33,6 +33,7 @@ class Produkty(models.Model):
     opis = models.TextField(blank=True)
     cena = models.DecimalField(max_digits=99999, decimal_places=2)
 
+
     class Meta:
         verbose_name = "Produkt"
         verbose_name_plural = "Produkty"
